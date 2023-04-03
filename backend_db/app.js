@@ -7,6 +7,7 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 const port = 5000
 
@@ -19,6 +20,7 @@ mongoose.connect(process.env.MONGOOSE_URI)
   })
 
 app.post("/addImage", (req, res) => {
+  const { label, imageUrl } = req.body
   console.log(req.body)
   res.json({ name: "me", age: "26" })
 })
