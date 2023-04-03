@@ -14,7 +14,6 @@ const Main = () => {
   ]
   return (
     <main>
-      Main
       <Layout imgs={imgs}></Layout>
     </main>
   )

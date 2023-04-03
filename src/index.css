@@ -2,7 +2,7 @@
 
 :root {
   --green-color: #3DB46D;
-  --light-white-gray-color: #BDBDBD;
+  --light-gray-color: #BDBDBD;
   --black-color: #333333;
 
   --padding-x: 5vw;
@@ -28,21 +28,21 @@ form {
   width: 300px;
   flex-grow: 0;
 
-  border-color: var(--light-white-gray-color);
-  color: var(--light-white-gray-color);
+  border-color: var(--light-gray-color);
+  color: var(--light-gray-color);
 }
 
 .input-group .form-control::placeholder {
-  color: var(--light-white-gray-color);
+  color: var(--light-gray-color);
 }
 
 .input-group-text {
   background-color: #FFF;
-  border-color: var(--light-white-gray-color);
+  border-color: var(--light-gray-color);
 }
 
 .search-icon {
-  color: var(--light-white-gray-color);
+  color: var(--light-gray-color);
 }
 
 .btn {
@@ -55,7 +55,7 @@ form {
   background-color: var(--green-color);
   color: #FFF;
 
-  box-shadow: 0 0 10px var(--light-white-gray-color);
+  box-shadow: 0 0 10px var(--light-gray-color);
 }
 
 /* main  */
