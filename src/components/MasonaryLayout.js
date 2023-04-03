@@ -18,7 +18,7 @@ const MasonryLayout = ({ imgs }) => {
       <Masonry breakpointCols={breakpointObj2}
         className="my-masonry-grid d-flex"
         columnClassName="my-masonry-grid_column">
-        {imgs?.map(img => {
+        {imgs?.reverse().map(img => {
           return (
             <div key={img._id}>
               <img src={img.url} alt={img.label} />

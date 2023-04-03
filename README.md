@@ -21,8 +21,6 @@
   </h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 ## Table of Contents
 
 - [Overview](#overview)
@@ -40,6 +38,8 @@
 
 - [React](https://reactjs.org/)
 - [Bootstrap]
+- Express
+- MongoDB
 
 ## Features
 
@@ -69,6 +69,7 @@ $ npm start
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
 - [Node.js](https://nodejs.org/)
 - [react-masonry-css]
+- mongoose
 
 ## Contact
 
