@@ -15,7 +15,8 @@ body {
 }
 
 /* header  */
-header {
+header,
+main {
   padding: var(--padding-y) var(--padding-x);
 }
 
@@ -55,4 +56,10 @@ form {
   color: #FFF;
 
   box-shadow: 0 0 10px var(--light-white-gray-color);
+}
+
+/* main  */
+main img {
+  width: 100%;
+  object-fit: cover;
 }
