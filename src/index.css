@@ -4,6 +4,7 @@
   --green-color: #3DB46D;
   --light-gray-color: #BDBDBD;
   --black-color: #333333;
+  --red-color: #EB5757;
 
   --padding-x: 5vw;
   --padding-y: 3vh;
@@ -64,6 +65,7 @@ main img {
   object-fit: cover;
 }
 
+/* add image form  */
 .overlay {
   position: fixed;
   top: 0;
