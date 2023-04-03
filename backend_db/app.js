@@ -4,9 +4,11 @@ require("dotenv").config()
 const cors = require("cors")
 
 const app = express()
-app.use(cors())
 
-const port = 3000
+app.use(cors())
+app.use(express.json())
+
+const port = 5000
 
 mongoose.connect(process.env.MONGOOSE_URI)
   .then(() => {
@@ -16,6 +18,11 @@ mongoose.connect(process.env.MONGOOSE_URI)
     console.log("error happened")
   })
 
-app.listen(port || 3000, () => {
-  console.log("listening on Port 3000")
+app.post("/addImage", (req, res) => {
+  console.log(req.body)
+  res.json({ name: "me", age: "26" })
+})
+
+app.listen(port || 5000, () => {
+  console.log(`Listening on Port ${port || 5000}`)
 })
