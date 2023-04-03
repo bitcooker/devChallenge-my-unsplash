@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import toast from 'react-hot-toast'
 
 const AddImage = () => {
 
@@ -19,9 +20,13 @@ const AddImage = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data)
+        toast("Image Added...")
         cancelAddImage(e)
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        toast("Error...")
+        console.log(err)
+      })
   }
 
   const cancelAddImage = (e) => {

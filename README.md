@@ -70,6 +70,7 @@ $ npm start
 - [Node.js](https://nodejs.org/)
 - [react-masonry-css]
 - mongoose
+- react-hot-toast
 
 ## Contact
 

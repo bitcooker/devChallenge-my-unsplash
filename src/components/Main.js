@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 import Layout from './MasonaryLayout'
 
@@ -23,6 +24,7 @@ const Main = () => {
 
   return (
     <main>
+      <Toaster />
       <Layout imgs={images}></Layout>
     </main>
   )
