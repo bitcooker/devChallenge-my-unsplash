@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-export const ImageSchema = new mongoose.Schema({
+const ImageSchema = new mongoose.Schema({
   label: {
     type: String,
     required: true
@@ -11,5 +11,7 @@ export const ImageSchema = new mongoose.Schema({
   }
 })
 
-export const Image = mongoose.model("Image", ImageSchema)
+const Image = mongoose.model("Image", ImageSchema)
+
+module.exports = Image
 
