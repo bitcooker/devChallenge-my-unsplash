@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SlMagnifier } from 'react-icons/sl'
 
 import { logo } from '../assets'
@@ -6,21 +6,16 @@ import { logo } from '../assets'
 const Header = () => {
 
   const [data, setData] = useState("");
-  const addImage = async (e) => {
-    e.preventDefault()
-    await fetch("http://localhost:5000/addImage", {
-      method: "POST",
-      body: JSON.stringify({ msg: "hello" }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(err => console.log(err))
+
+  const showOverlay = () => {
+    // show overlay and add image form
+    const body = document.querySelector("body")
+    const overlay = document.querySelector(".overlay")
+
+    body.style.overflow = "hidden"
+    overlay.style.display = "flex"
   }
 
-  console.log(data)
   return (
     <header className='app__header'>
       <nav className="navbar navbar-light bg-light">
@@ -40,7 +35,7 @@ const Header = () => {
           </form>
 
           <button className="btn ms-auto"
-            onClick={(e) => addImage(e)}>
+            onClick={showOverlay}>
             Add a photo
           </button>
 
