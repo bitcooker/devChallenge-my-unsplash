@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Layout from './MasonaryLayout'
 
 const Main = () => {
-  const imgs = [
-    "https://source.unsplash.com/random/?nature&1",
-    "https://source.unsplash.com/random/?wild&2",
-    "https://source.unsplash.com/random/?wild&3",
-    "https://source.unsplash.com/random/?wild&4",
-    "https://source.unsplash.com/random/?wild&5",
-    "https://source.unsplash.com/random/?wild&6",
-    "https://source.unsplash.com/random/?wild&7",
-  ]
+
+  const [images, setImages] = useState([]);
+
+  const fetchImage = () => {
+    // fetch all images from backend
+    fetch("http://localhost:5000/")
+      .then(res => res.json())
+      .then(data => setImages(data))
+      .catch(err => {
+        console.log("error happened")
+        console.log(err)
+      })
+  }
+
+  useEffect(() => {
+    fetchImage()
+  }, []);
+
   return (
     <main>
-      <Layout imgs={imgs}></Layout>
+      <Layout imgs={images}></Layout>
     </main>
   )
 }

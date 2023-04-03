@@ -21,7 +21,14 @@ mongoose.connect(process.env.MONGOOSE_URI)
     console.log("error happened")
   })
 
+app.get("/", async (req, res) => {
+  // get all images
+  const images = await Image.find()
+  res.send(images)
+})
+
 app.post("/addImage", async (req, res) => {
+  // add image to database
   const { label, imageUrl } = req.body
   let savedImage
   if (label && imageUrl) {
