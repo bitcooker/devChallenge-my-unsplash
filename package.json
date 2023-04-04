@@ -2,10 +2,13 @@
   "name": "my-unsplash",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"cd backend_db && npm run dev\" \"cd client && npm start\" "
+    "start": "node backend_db/app.js",
+    "dev": "concurrently \"npm run backend_db\" \"npm run client\"",
+    "backend_db": "nodemon backend_db/app.js",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   },
   "homepage": "https://github.com/nkp1111/my-unsplash#readme",
   "dependencies": {
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22"
   }
 }
