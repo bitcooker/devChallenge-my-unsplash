@@ -17,13 +17,13 @@ const Header = () => {
   return (
     <header className='app__header'>
       <nav className="navbar navbar-light">
-        <div className="d-flex justify-content-start w-100">
+        <div className="d-flex w-100">
 
           <div className="navbar-brand" href="#">
             <img src={logo} alt="logo" />
           </div>
 
-          <form className='d-flex justify-content-between'
+          <form className='d-flex'
             onSubmit={(e) => searchImage(e)}>
             <div className="input-group">
               <span className="input-group-text" id="basic-addon1">
@@ -33,7 +33,7 @@ const Header = () => {
             </div>
           </form>
 
-          <button className="btn ms-auto"
+          <button className="btn"
             onClick={() => {
               handleOverlayType("add")
               showOverlay()

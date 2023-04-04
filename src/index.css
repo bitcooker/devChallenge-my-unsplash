@@ -189,3 +189,55 @@ main img {
 footer>div {
   font-size: 0.85rem;
 }
+
+@media screen and (max-width: 760px) {
+  nav>div {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .input-group {
+    flex-wrap: nowrap;
+  }
+
+  header .btn {
+    margin: auto;
+  }
+
+  header .navbar-brand,
+  header form,
+  header .btn {
+    margin-bottom: 1rem;
+  }
+
+  main {
+    padding-top: 25vh;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  header {
+    position: static;
+  }
+
+  nav>div {
+    flex-direction: column;
+  }
+
+  header .btn {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .input-group .form-control {
+    width: 100%;
+  }
+
+  main {
+    padding-top: var(--padding-y);
+  }
+}
