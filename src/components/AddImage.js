@@ -24,12 +24,14 @@ const AddImage = () => {
       .then(data => {
         console.log(data)
         toast("Image Added...")
-        hideOverlay(e)
+        window.location.reload();
       })
       .catch(err => {
         toast("Error...")
         console.log(err)
       })
+
+    hideOverlay(e)
   }
 
   return (

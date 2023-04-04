@@ -41,7 +41,18 @@ app.post("/addImage", async (req, res) => {
     return res.send(savedImage)
   }
 
-  res.send("error")
+  res.send({ "error": "No label or imageUrl" })
+})
+
+app.post("/deleteImage", async (req, res) => {
+  // delete an image from database if password is right
+  const { password, id } = req.body
+  if (password === "T") {
+    const image = await Image.findOne({ _id: id })
+    await Image.deleteOne(image)
+    return res.send("deleted")
+  }
+  res.send("incorrect password")
 })
 
 app.listen(port || 5000, () => {

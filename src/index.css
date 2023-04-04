@@ -149,6 +149,7 @@ main img {
   background-color: var(--red-color);
 }
 
+.add-btn:hover,
 .delete-btn:hover {
   color: #fff;
 }

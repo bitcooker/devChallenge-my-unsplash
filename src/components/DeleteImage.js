@@ -1,11 +1,41 @@
 import React, { useRef } from 'react'
+import toast from 'react-hot-toast'
 
 import ButtonHolder from './ButtonHolder'
+import { hideOverlay } from '../utils'
 
 const DeleteImage = ({ deleteId }) => {
 
   const passRef = useRef(null)
-  const deleteImage = (e) => { }
+  const deleteImage = async (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+
+    await fetch("http://localhost:5000/deleteImage", {
+      method: "POST",
+      body: JSON.stringify({
+        password: passRef.current.value,
+        id: deleteId
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+      .then(res => res.text())
+      .then(data => {
+        if (data === "deleted") {
+          toast("Successfully Deleted Image...")
+          window.location.reload();
+        } else {
+          toast("Invalid Password...")
+        }
+      })
+      .catch(err => {
+        toast("Error")
+        console.log(err)
+      })
+    hideOverlay(e)
+  }
   return (
     <>
       <h2>Are you sure?</h2>
