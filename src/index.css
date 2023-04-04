@@ -21,6 +21,22 @@ main {
   padding: var(--padding-y) var(--padding-x);
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  z-index: 100;
+
+  background: #fff;
+}
+
+main {
+  padding-top: 20vh;
+}
+
 form {
   flex: 1;
 }
@@ -167,4 +183,9 @@ main img {
 
 .cancel-btn:hover {
   background: #fff;
+}
+
+/* footer  */
+footer>div {
+  font-size: 0.85rem;
 }

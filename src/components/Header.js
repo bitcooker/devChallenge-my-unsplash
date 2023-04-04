@@ -16,7 +16,7 @@ const Header = () => {
 
   return (
     <header className='app__header'>
-      <nav className="navbar navbar-light bg-light">
+      <nav className="navbar navbar-light">
         <div className="d-flex justify-content-start w-100">
 
           <div className="navbar-brand" href="#">

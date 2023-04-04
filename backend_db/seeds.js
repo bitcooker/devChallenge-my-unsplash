@@ -14,12 +14,13 @@ mongoose.connect(process.env.MONGOOSE_URI)
   })
 
 const getRandomLabel = () => {
-  const labels = ["coding", "science", "space", "monster", "nature", "technology", "celebrity", "planet", "anime", "movie", "animal"]
+  const labels = ["coding", "science", "space", "monster", "nature", "technology", "celebrity", "planet", "anime", "movie", "animal",
+    "butterfly", "beauty"]
   const randInt = Math.floor(Math.random() * labels.length)
   return labels[randInt]
 }
 
-const addNImage = async (n = 10) => {
+const addNImage = async (n = 30) => {
   await Image.deleteMany({})
   for (let i = 0; i < n; i++) {
     let label = getRandomLabel()
@@ -32,6 +33,7 @@ const addNImage = async (n = 10) => {
 
     await image.save()
   }
+  console.log("done")
 }
 
 addNImage()
