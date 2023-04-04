@@ -1,0 +1,20 @@
+{
+  "name": "my-unsplash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkp1111/my-unsplash.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkp1111/my-unsplash/issues"
+  },
+  "homepage": "https://github.com/nkp1111/my-unsplash#readme"
+}

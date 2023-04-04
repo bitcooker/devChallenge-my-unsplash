@@ -1,8 +1,8 @@
 const express = require("express")
 const mongoose = require("mongoose")
-require("dotenv").config()
-const cors = require("cors")
 const path = require('path');
+require('dotenv').config({ path: require('find-config')('.env') })
+const cors = require("cors")
 
 const app = express()
 
@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 
 const port = 5000
 
+console.log(process.env.MONGOOSE_URI)
 mongoose.connect(process.env.MONGOOSE_URI)
   .then(() => {
     console.log("Mongoose connected");
@@ -53,7 +54,8 @@ app.post("/addImage", async (req, res) => {
 app.post("/deleteImage", async (req, res) => {
   // delete an image from database if password is right
   const { password, id } = req.body
-  if (password === "T") {
+  let deletePass = process.env.DELETE_PASSWORD || "password"
+  if (password === deletePass) {
     const image = await Image.findOne({ _id: id })
     await Image.deleteOne(image)
     return res.send("deleted")
