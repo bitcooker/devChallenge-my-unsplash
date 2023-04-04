@@ -1,6 +1,8 @@
 import React, { useRef } from 'react'
 import toast from 'react-hot-toast'
 
+import { hideOverlay } from '../utils'
+
 const AddImage = () => {
 
   const labelRef = useRef(null)
@@ -21,24 +23,12 @@ const AddImage = () => {
       .then(data => {
         console.log(data)
         toast("Image Added...")
-        cancelAddImage(e)
+        hideOverlay(e)
       })
       .catch(err => {
         toast("Error...")
         console.log(err)
       })
-  }
-
-  const cancelAddImage = (e) => {
-    // hide overlay and add image form
-    e.preventDefault()
-    e.stopPropagation()
-
-    const body = document.querySelector("body")
-    const overlay = document.querySelector(".overlay")
-
-    body.style.overflow = "visible"
-    overlay.style.display = "none"
   }
 
   return (
@@ -59,7 +49,7 @@ const AddImage = () => {
         </div>
         <div className="btn-holder d-flex justify-content-end">
           <button className="btn btn-light me-2"
-            onClick={(e) => cancelAddImage(e)}>Cancel</button>
+            onClick={(e) => hideOverlay(e)}>Cancel</button>
           <button className="btn btn-primary">Submit</button>
         </div>
       </form>

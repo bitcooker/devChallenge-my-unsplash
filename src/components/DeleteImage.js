@@ -1,6 +1,7 @@
 import React from 'react'
 
-const DeleteImage = () => {
+const DeleteImage = ({ deleteId }) => {
+  console.log(deleteId)
   return (
     <div>
       DeleteImage

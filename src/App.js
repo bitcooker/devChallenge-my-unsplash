@@ -6,8 +6,12 @@ import Overlay from './components/Overlay'
 
 const App = () => {
   const [overlayType, setOverlayType] = useState("add");
+  const [deleteId, setDeleteId] = useState(null);
 
-  const handleOverlayType = (type) => {
+  const handleOverlayType = (type, id) => {
+    if (id) {
+      setDeleteId(id)
+    }
     setOverlayType(type)
   }
 
@@ -15,7 +19,7 @@ const App = () => {
     <div>
       <Header handleOverlayType={handleOverlayType} />
       <Main handleOverlayType={handleOverlayType} />
-      <Overlay type={overlayType} />
+      <Overlay type={overlayType} deleteId={deleteId} />
     </div >
   )
 }
