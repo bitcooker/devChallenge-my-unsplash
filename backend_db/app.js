@@ -2,6 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 require("dotenv").config()
 const cors = require("cors")
+const path = require('path');
 
 const app = express()
 
@@ -20,6 +21,10 @@ mongoose.connect(process.env.MONGOOSE_URI)
   .catch(err => {
     console.log("error happened")
   })
+
+// Have Node serve the files for our built React app
+app.use(express.static(path.resolve(__dirname, '../build')));
+
 
 app.get("/", async (req, res) => {
   // get all images
@@ -55,6 +60,11 @@ app.post("/deleteImage", async (req, res) => {
   }
   res.send("incorrect password")
 })
+
+// All other GET requests not handled before will return our React app
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../build', 'index.html'));
+});
 
 app.listen(port || 5000, () => {
   console.log(`Listening on Port ${port || 5000}`)
