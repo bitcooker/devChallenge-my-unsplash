@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd backend_db && node app.js\" \"cd client && npm start\" "
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/nkp1111/my-unsplash/issues"
   },
-  "homepage": "https://github.com/nkp1111/my-unsplash#readme"
+  "homepage": "https://github.com/nkp1111/my-unsplash#readme",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
 }

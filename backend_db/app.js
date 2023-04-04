@@ -14,7 +14,6 @@ app.use(express.urlencoded({ extended: true }))
 
 const port = 5000
 
-console.log(process.env.MONGOOSE_URI)
 mongoose.connect(process.env.MONGOOSE_URI)
   .then(() => {
     console.log("Mongoose connected");
