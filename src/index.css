@@ -67,6 +67,11 @@ header .btn:hover {
   transition: 0.3s all linear;
 }
 
+.img-item {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
 .img-item:hover::before {
   content: "";
   width: 100%;
@@ -77,7 +82,7 @@ header .btn:hover {
   left: 0;
   /* transition: 0.3s all linear; */
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .img-item .btn,

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { Toaster } from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 
 import Layout from './MasonaryLayout'
+import Spinner from './Spinner';
 
-const Main = ({ handleOverlayType }) => {
+const Main = ({ handleOverlayType, loading, setLoading }) => {
 
   const [images, setImages] = useState([]);
 
@@ -15,17 +16,30 @@ const Main = ({ handleOverlayType }) => {
       .catch(err => {
         console.log("error happened")
         console.log(err)
+        toast("Error check server for images", {
+          style: {
+            border: "1px solid red",
+            color: "red",
+            fontWeight: "700",
+            marginTop: "3rem"
+          }
+        })
       })
   }
 
   useEffect(() => {
+    setLoading(true)
     fetchImage()
+    setLoading(false)
   }, []);
 
   return (
     <main>
       <Toaster />
-      <Layout imgs={images} handleOverlayType={handleOverlayType}></Layout>
+      {loading
+        ? <Spinner message="Images are being loaded... please wait" />
+        : <Layout imgs={images} handleOverlayType={handleOverlayType} />}
+
     </main>
   )
 }

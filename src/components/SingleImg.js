@@ -8,7 +8,7 @@ const SingleImg = ({ img, handleOverlayType }) => {
     <div className='position-relative img-item'>
       <img src={img.url} alt={img.label} />
       <div className="label position-absolute">{img.label}</div>
-      <button className="btn delete-btn position-absolute"
+      <button className="btn delete-img position-absolute"
         onClick={(e) => {
           handleOverlayType("delete", img._id)
           showOverlay()
