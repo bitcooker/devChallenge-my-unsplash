@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import toast from 'react-hot-toast'
 
 import { hideOverlay } from '../utils'
+import ButtonHolder from './ButtonHolder'
 
 const AddImage = () => {
 
@@ -47,11 +48,7 @@ const AddImage = () => {
             name="photoUrl"
             ref={imageUrlRef} />
         </div>
-        <div className="btn-holder d-flex justify-content-end">
-          <button className="btn btn-light me-2"
-            onClick={(e) => hideOverlay(e)}>Cancel</button>
-          <button className="btn btn-primary">Submit</button>
-        </div>
+        <ButtonHolder />
       </form>
     </>
   )

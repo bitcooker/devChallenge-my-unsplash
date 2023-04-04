@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useRef } from 'react'
+
+import ButtonHolder from './ButtonHolder'
 
 const DeleteImage = ({ deleteId }) => {
-  console.log(deleteId)
+
+  const passRef = useRef(null)
+  const deleteImage = (e) => { }
   return (
-    <div>
-      DeleteImage
-      DeleteImage
-    </div>
+    <>
+      <h2>Are you sure?</h2>
+      <form onSubmit={(e) => deleteImage(e)}>
+        <div className="mb-3">
+          <label htmlFor="password" className="form-label">Password</label>
+          <input type="text" className="form-control" id="password" aria-describedby="delete password"
+            name="password"
+            ref={passRef} />
+        </div>
+        <ButtonHolder type="delete" />
+      </form>
+    </>
   )
 }
 

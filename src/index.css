@@ -54,12 +54,12 @@ form {
   font-weight: 700;
 }
 
-.btn:hover {
+header .btn:hover {
   background-color: var(--green-color);
   color: #FFF;
-
   box-shadow: 0 0 10px var(--light-gray-color);
 }
+
 
 /* main  */
 .img-item,
@@ -116,7 +116,7 @@ main img {
   object-fit: cover;
 }
 
-/* add image form  */
+/* overlay  */
 .overlay {
   position: fixed;
   top: 0;
@@ -129,12 +129,36 @@ main img {
   justify-content: center;
   align-items: center;
 
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* image form  */
 .image-form {
   width: 50%;
   min-width: 300px;
 
   border-radius: 1rem;
+}
+
+/* delete form button */
+.btn-holder .btn:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+  background-color: var(--red-color);
+}
+
+.delete-btn:hover {
+  color: #fff;
+}
+
+.cancel-btn {
+  background: #fff;
+  color: var(--light-gray-color);
+  border: 1px solid var(--light-gray-color);
+}
+
+.cancel-btn:hover {
+  background: #fff;
 }
