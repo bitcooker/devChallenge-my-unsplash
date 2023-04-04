@@ -6,7 +6,8 @@ export const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [overlayType, setOverlayType] = useState("add");
   const [deleteId, setDeleteId] = useState(null);
-
+  const [images, setImages] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleOverlayType = (type) => {
     setOverlayType(type)
@@ -21,6 +22,10 @@ export const AppProvider = ({ children }) => {
         handleOverlayType,
         deleteId,
         setDeleteId,
+        images,
+        setImages,
+        searchTerm,
+        setSearchTerm,
       }}>
       {children}
     </AppContext.Provider>

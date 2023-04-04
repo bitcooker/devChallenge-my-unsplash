@@ -3,6 +3,7 @@ import Masonry from 'react-masonry-css'
 
 import './masonry.css'
 import SingleImg from './SingleImg';
+import useGlobalContext from '../context';
 
 const breakpointObj2 = {
   default: 4,
@@ -14,12 +15,18 @@ const breakpointObj2 = {
 };
 
 const MasonryLayout = ({ images }) => {
+
+  const { searchTerm } = useGlobalContext()
+  let imageToView = searchTerm
+    ? images?.filter(img => img.label.toLowerCase().match(searchTerm.toLowerCase()))
+    : images
+
   return (
     <div>
       <Masonry breakpointCols={breakpointObj2}
         className="my-masonry-grid d-flex"
         columnClassName="my-masonry-grid_column">
-        {images?.reverse().map(img => {
+        {imageToView?.map(img => {
           return (
             <SingleImg key={img._id} img={img} />
           )

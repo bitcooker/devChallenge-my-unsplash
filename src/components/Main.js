@@ -7,7 +7,7 @@ import useGlobalContext from '../context';
 
 const Main = () => {
 
-  const [images, setImages] = useState([]);
+  const { images, setImages } = useGlobalContext()
   const { loading, setLoading } = useGlobalContext()
 
   const fetchImage = () => {

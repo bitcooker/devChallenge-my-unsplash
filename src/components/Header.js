@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { SlMagnifier } from 'react-icons/sl'
 
 import { logo } from '../assets'
@@ -7,7 +7,13 @@ import useGlobalContext from '../context'
 
 const Header = () => {
 
-  const { handleOverlayType } = useGlobalContext()
+  const { handleOverlayType, setSearchTerm } = useGlobalContext()
+  const searchRef = useRef(null)
+  const searchImage = (e) => {
+    e.preventDefault()
+    setSearchTerm(searchRef.current.value)
+  }
+
   return (
     <header className='app__header'>
       <nav className="navbar navbar-light bg-light">
@@ -17,12 +23,13 @@ const Header = () => {
             <img src={logo} alt="logo" />
           </div>
 
-          <form className='d-flex justify-content-between'>
+          <form className='d-flex justify-content-between'
+            onSubmit={(e) => searchImage(e)}>
             <div className="input-group">
               <span className="input-group-text" id="basic-addon1">
                 <SlMagnifier className='search-icon' />
               </span>
-              <input type="text" className="form-control" placeholder="Search by name" aria-label="image name" aria-describedby="basic-addon1" />
+              <input type="text" className="form-control" placeholder="Search by name" aria-label="image name" aria-describedby="basic-addon1" ref={searchRef} />
             </div>
           </form>
 
