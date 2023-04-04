@@ -4,6 +4,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import Layout from './MasonaryLayout'
 import Spinner from './Spinner';
 import useGlobalContext from '../context';
+import GotoTop from './GotoTop';
 
 const Main = () => {
 
@@ -38,6 +39,7 @@ const Main = () => {
   return (
     <main>
       <Toaster />
+      <GotoTop />
       {loading
         ? <Spinner message="Images are being loaded... please wait" />
         : <Layout images={images} />}
