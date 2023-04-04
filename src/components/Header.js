@@ -2,19 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { SlMagnifier } from 'react-icons/sl'
 
 import { logo } from '../assets'
+import { showOverlay } from '../utils'
 
-const Header = () => {
-
-  const [data, setData] = useState("");
-
-  const showOverlay = () => {
-    // show overlay and add image form
-    const body = document.querySelector("body")
-    const overlay = document.querySelector(".overlay")
-
-    body.style.overflow = "hidden"
-    overlay.style.display = "flex"
-  }
+const Header = ({ handleOverlayType }) => {
 
   return (
     <header className='app__header'>
@@ -35,7 +25,10 @@ const Header = () => {
           </form>
 
           <button className="btn ms-auto"
-            onClick={showOverlay}>
+            onClick={() => {
+              handleOverlayType("add")
+              showOverlay()
+            }}>
             Add a photo
           </button>
 

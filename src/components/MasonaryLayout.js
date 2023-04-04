@@ -13,7 +13,7 @@ const breakpointObj2 = {
   500: 1
 };
 
-const MasonryLayout = ({ imgs }) => {
+const MasonryLayout = ({ imgs, handleOverlayType }) => {
   return (
     <div>
       <Masonry breakpointCols={breakpointObj2}
@@ -21,7 +21,7 @@ const MasonryLayout = ({ imgs }) => {
         columnClassName="my-masonry-grid_column">
         {imgs?.reverse().map(img => {
           return (
-            <SingleImg key={img._id} img={img} />
+            <SingleImg key={img._id} img={img} handleOverlayType={handleOverlayType} />
           )
         })}
       </Masonry>

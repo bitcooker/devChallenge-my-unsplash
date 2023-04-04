@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast'
 
 import Layout from './MasonaryLayout'
 
-const Main = () => {
+const Main = ({ handleOverlayType }) => {
 
   const [images, setImages] = useState([]);
 
@@ -25,7 +25,7 @@ const Main = () => {
   return (
     <main>
       <Toaster />
-      <Layout imgs={images}></Layout>
+      <Layout imgs={images} handleOverlayType={handleOverlayType}></Layout>
     </main>
   )
 }

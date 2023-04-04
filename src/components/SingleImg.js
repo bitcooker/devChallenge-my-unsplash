@@ -1,6 +1,8 @@
 import React from 'react'
 
-const SingleImg = ({ img }) => {
+import { showOverlay } from '../utils'
+
+const SingleImg = ({ img, handleOverlayType }) => {
 
   const showDeleteForm = (e, id) => {
     e.preventDefault()
@@ -9,9 +11,14 @@ const SingleImg = ({ img }) => {
   return (
     <div className='position-relative img-item'>
       <img src={img.url} alt={img.label} />
-      <div className="label position-absolute"
-        onClick={(e) => showDeleteForm(e, img._id)}>{img.label}</div>
-      <button className="btn delete-btn position-absolute">delete</button>
+      <div className="label position-absolute">{img.label}</div>
+      <button className="btn delete-btn position-absolute"
+        onClick={(e) => {
+          handleOverlayType("delete")
+          showOverlay()
+        }}>
+        delete
+      </button>
     </div>
   )
 }

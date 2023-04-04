@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 import Header from './components/Header'
 import Main from './components/Main'
-import AddImage from './components/AddImage'
+import Overlay from './components/Overlay'
 
 const App = () => {
+  const [overlayType, setOverlayType] = useState("add");
+
+  const handleOverlayType = (type) => {
+    setOverlayType(type)
+  }
 
   return (
     <div>
-      <Header />
-      <Main />
-      <AddImage />
+      <Header handleOverlayType={handleOverlayType} />
+      <Main handleOverlayType={handleOverlayType} />
+      <Overlay type={overlayType} />
     </div >
   )
 }
