@@ -14,18 +14,20 @@ mongoose.connect(process.env.MONGOOSE_URI)
   })
 
 const getRandomLabel = () => {
-  const labels = ["wild", "nature", "technology", "celebrity", "planet", "anime", "movie", "animal"]
+  const labels = ["coding", "science", "space", "monster", "nature", "technology", "celebrity", "planet", "anime", "movie", "animal"]
   const randInt = Math.floor(Math.random() * labels.length)
   return labels[randInt]
 }
 
 const addNImage = async (n = 10) => {
+  await Image.deleteMany({})
   for (let i = 0; i < n; i++) {
     let label = getRandomLabel()
     let imageUrl = `https://source.unsplash.com/random/?${label}&${i}`
     const image = new Image({
       label,
-      url: imageUrl
+      url: imageUrl,
+      uploadDate: new Date(),
     })
 
     await image.save()

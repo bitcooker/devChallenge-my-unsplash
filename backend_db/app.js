@@ -23,7 +23,7 @@ mongoose.connect(process.env.MONGOOSE_URI)
 
 app.get("/", async (req, res) => {
   // get all images
-  const images = await Image.find()
+  const images = await Image.find().sort({ field: "asc", uploadDate: -1 })
   res.send(images)
 })
 
@@ -34,7 +34,8 @@ app.post("/addImage", async (req, res) => {
   if (label && imageUrl) {
     const image = new Image({
       label,
-      url: imageUrl
+      url: imageUrl,
+      uploadDate: new Date(),
     })
 
     savedImage = await image.save()

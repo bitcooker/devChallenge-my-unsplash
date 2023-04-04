@@ -8,6 +8,10 @@ const ImageSchema = new mongoose.Schema({
   url: {
     type: String,
     required: true,
+  },
+  uploadDate: {
+    type: Date,
+    required: true
   }
 })
 
