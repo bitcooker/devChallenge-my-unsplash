@@ -2,6 +2,7 @@ import React from 'react'
 import Masonry from 'react-masonry-css'
 
 import './masonry.css'
+import SingleImg from './SingleImg';
 
 const breakpointObj2 = {
   default: 4,
@@ -20,9 +21,7 @@ const MasonryLayout = ({ imgs }) => {
         columnClassName="my-masonry-grid_column">
         {imgs?.reverse().map(img => {
           return (
-            <div key={img._id}>
-              <img src={img.url} alt={img.label} />
-            </div>
+            <SingleImg key={img._id} img={img} />
           )
         })}
       </Masonry>
