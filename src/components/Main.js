@@ -3,10 +3,12 @@ import toast, { Toaster } from 'react-hot-toast'
 
 import Layout from './MasonaryLayout'
 import Spinner from './Spinner';
+import useGlobalContext from '../context';
 
-const Main = ({ handleOverlayType, loading, setLoading }) => {
+const Main = () => {
 
   const [images, setImages] = useState([]);
+  const { loading, setLoading } = useGlobalContext()
 
   const fetchImage = () => {
     // fetch all images from backend
@@ -38,7 +40,7 @@ const Main = ({ handleOverlayType, loading, setLoading }) => {
       <Toaster />
       {loading
         ? <Spinner message="Images are being loaded... please wait" />
-        : <Layout imgs={images} handleOverlayType={handleOverlayType} />}
+        : <Layout images={images} />}
 
     </main>
   )

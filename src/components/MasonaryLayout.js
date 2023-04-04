@@ -13,15 +13,15 @@ const breakpointObj2 = {
   500: 1
 };
 
-const MasonryLayout = ({ imgs, handleOverlayType }) => {
+const MasonryLayout = ({ images }) => {
   return (
     <div>
       <Masonry breakpointCols={breakpointObj2}
         className="my-masonry-grid d-flex"
         columnClassName="my-masonry-grid_column">
-        {imgs?.reverse().map(img => {
+        {images?.reverse().map(img => {
           return (
-            <SingleImg key={img._id} img={img} handleOverlayType={handleOverlayType} />
+            <SingleImg key={img._id} img={img} />
           )
         })}
       </Masonry>

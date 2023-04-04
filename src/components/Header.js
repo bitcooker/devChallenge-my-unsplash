@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { SlMagnifier } from 'react-icons/sl'
 
 import { logo } from '../assets'
 import { showOverlay } from '../utils'
+import useGlobalContext from '../context'
 
-const Header = ({ handleOverlayType }) => {
+const Header = () => {
 
+  const { handleOverlayType } = useGlobalContext()
   return (
     <header className='app__header'>
       <nav className="navbar navbar-light bg-light">
