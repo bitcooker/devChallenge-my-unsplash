@@ -24,12 +24,13 @@
   "homepage": "https://github.com/nkp1111/my-unsplash#readme",
   "dependencies": {
     "concurrently": "^8.0.1",
-    "nodemon": "^2.0.22",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "find-config": "^1.0.0",
     "mongoose": "^7.0.3",
-    "path": "^0.12.7"
+    "nodemon": "^2.0.22",
+    "path": "^0.12.7",
+    "react-scripts": "^5.0.1"
   }
 }
