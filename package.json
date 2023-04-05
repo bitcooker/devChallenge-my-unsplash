@@ -6,9 +6,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend_db/app.js",
     "dev": "concurrently \"npm run backend_db\" \"npm run client\"",
-    "backend_db": "nodemon backend_db/app.js",
     "client": "cd client && npm start",
-    "build": "cd client && npm run build"
+    "backend_db": "nodemon backend_db/app.js",
+    "build": "cd client && npm run build",
+    "vercel-build": "npm run build && cp -r client/build backend_db/public"
   },
   "repository": {
     "type": "git",
