@@ -18,7 +18,10 @@ const Main = () => {
       : "/"
 
     fetch(getImageUrl)
-      .then(res => res.json())
+      .then(res => {
+        console.log(res.body)
+        return res.json()
+      })
       .then(data => setImages(data))
       .catch(err => {
         console.log("error happened")
