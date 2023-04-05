@@ -13,7 +13,11 @@ const Main = () => {
 
   const fetchImage = () => {
     // fetch all images from backend
-    fetch("http://localhost:5000/")
+    const getImageUrl = process.env.NODE_ENV !== "production"
+      ? "http://localhost:5000/"
+      : "/"
+
+    fetch(getImageUrl)
       .then(res => res.json())
       .then(data => setImages(data))
       .catch(err => {

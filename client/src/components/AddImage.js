@@ -10,7 +10,11 @@ const AddImage = () => {
   const imageUrlRef = useRef(null)
 
   const addImage = async (e) => {
-    await fetch("http://localhost:5000/addImage", {
+    const addImageUrl = process.env.NODE_ENV !== "production"
+      ? "http://localhost:5000/addImage"
+      : "/addImage"
+
+    await fetch(addImageUrl, {
       method: "POST",
       body: JSON.stringify({
         label: labelRef.current.value,

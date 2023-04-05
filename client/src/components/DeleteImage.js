@@ -11,7 +11,11 @@ const DeleteImage = ({ deleteId }) => {
     e.preventDefault()
     e.stopPropagation()
 
-    await fetch("http://localhost:5000/deleteImage", {
+    const deleteImageUrl = process.env.NODE_ENV !== "production"
+      ? "http://localhost:5000/deleteImage"
+      : "/deleteImage"
+
+    await fetch(deleteImageUrl, {
       method: "POST",
       body: JSON.stringify({
         password: passRef.current.value,
