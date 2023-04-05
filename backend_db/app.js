@@ -29,7 +29,7 @@ app.use(express.static(path.resolve(__dirname, '../build')));
 app.get("/", async (req, res) => {
   // get all images
   const images = await Image.find().sort({ field: "asc", uploadDate: -1 })
-  res.send(images)
+  res.json(images)
 })
 
 app.post("/addImage", async (req, res) => {
@@ -44,10 +44,10 @@ app.post("/addImage", async (req, res) => {
     })
 
     savedImage = await image.save()
-    return res.send(savedImage)
+    return res.json(savedImage)
   }
 
-  res.send({ "error": "No label or imageUrl" })
+  res.json({ "error": "No label or imageUrl" })
 })
 
 app.post("/deleteImage", async (req, res) => {
