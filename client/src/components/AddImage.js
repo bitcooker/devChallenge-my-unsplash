@@ -11,9 +11,10 @@ const AddImage = () => {
 
   const addImage = async (e) => {
     const addImageUrl = process.env.NODE_ENV !== "production"
-      ? "http://localhost:5000/addImage"
-      : "/addImage"
+      ? "http://localhost:5000/api/addImage"
+      : "/api/addImage"
 
+    console.log(addImageUrl)
     await fetch(addImageUrl, {
       method: "POST",
       body: JSON.stringify({

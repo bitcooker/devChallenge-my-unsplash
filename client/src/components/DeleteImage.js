@@ -12,8 +12,8 @@ const DeleteImage = ({ deleteId }) => {
     e.stopPropagation()
 
     const deleteImageUrl = process.env.NODE_ENV !== "production"
-      ? "http://localhost:5000/deleteImage"
-      : "/deleteImage"
+      ? "http://localhost:5000/api/deleteImage"
+      : "/api/deleteImage"
 
     await fetch(deleteImageUrl, {
       method: "POST",

@@ -26,13 +26,13 @@ mongoose.connect(process.env.MONGOOSE_URI)
 app.use(express.static(path.resolve(__dirname, '../build')));
 
 
-app.get("/", async (req, res) => {
+app.get("/api/getImages", async (req, res) => {
   // get all images
   const images = await Image.find().sort({ field: "asc", uploadDate: -1 })
   res.json(images)
 })
 
-app.post("/addImage", async (req, res) => {
+app.post("/api/addImage", async (req, res) => {
   // add image to database
   const { label, imageUrl } = req.body
   let savedImage
@@ -50,7 +50,7 @@ app.post("/addImage", async (req, res) => {
   res.json({ "error": "No label or imageUrl" })
 })
 
-app.post("/deleteImage", async (req, res) => {
+app.post("/api/deleteImage", async (req, res) => {
   // delete an image from database if password is right
   const { password, id } = req.body
   let deletePass = process.env.DELETE_PASSWORD || "password"

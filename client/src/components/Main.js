@@ -14,8 +14,8 @@ const Main = () => {
   const fetchImage = () => {
     // fetch all images from backend
     const getImageUrl = process.env.NODE_ENV !== "production"
-      ? "http://localhost:5000/"
-      : "/"
+      ? "http://localhost:5000/api/getImages"
+      : "/api/getImages"
 
     fetch(getImageUrl)
       .then(res => res.json())
