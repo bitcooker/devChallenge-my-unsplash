@@ -12,9 +12,8 @@ const AddImage = () => {
   const addImage = async (e) => {
     const addImageUrl = process.env.NODE_ENV !== "production"
       ? "http://localhost:5000/api/addImage"
-      : "/api/addImage"
+      : process.env.BASE_URL + "/api/addImage"
 
-    console.log(addImageUrl)
     await fetch(addImageUrl, {
       method: "POST",
       body: JSON.stringify({
@@ -27,7 +26,6 @@ const AddImage = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         toast("Image Added...")
         window.location.reload();
       })

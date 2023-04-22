@@ -13,7 +13,7 @@ const DeleteImage = ({ deleteId }) => {
 
     const deleteImageUrl = process.env.NODE_ENV !== "production"
       ? "http://localhost:5000/api/deleteImage"
-      : "/api/deleteImage"
+      : process.env.BASE_URL + "/api/deleteImage"
 
     await fetch(deleteImageUrl, {
       method: "POST",
