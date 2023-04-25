@@ -36,8 +36,8 @@
 
 ### Tech Stacks
 
-- [React]
-- [Bootstrap]
+- React
+- Bootstrap
 - Express
 - MongoDB
 
