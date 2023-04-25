@@ -7,7 +7,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="[https://{your-demo-link.your-domain}](https://my-unsplash.fly.dev/)">
       Demo
     </a>
     <span> | </span>
@@ -34,9 +34,9 @@
 
 ![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
-### Built With
+### Tech Stacks
 
-- [React](https://reactjs.org/)
+- [React]
 - [Bootstrap]
 - Express
 - MongoDB
@@ -69,8 +69,3 @@ $ npm start
 - mongoose
 - react-hot-toast
 - react-spinner-loader
-
-## Contact
-
-- GitHub [nkp1111](https://github.com/nkp1111)
-- Twitter [@nkp11111507](https://twitter.com/@nkp11111507)
