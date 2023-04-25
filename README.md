@@ -11,7 +11,7 @@
       Demo
     </a>
     <span> | </span>
-    <a href="https://github.com/nkp1111/my-unsplash">
+    <a href="https://github.com/bitcooker/devChallenge-my-unsplash">
       GitHub
     </a>
     <span> | </span>
