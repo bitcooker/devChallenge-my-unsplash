@@ -7,7 +7,7 @@
 
 <div align="center">
   <h3>
-    <a href="[https://{your-demo-link.your-domain}](https://my-unsplash.fly.dev/)">
+    <a href="https://my-unsplash.fly.dev/">
       Demo
     </a>
     <span> | </span>
